@@ -20,6 +20,10 @@ final class AuthorizationViewController: UIViewController {
         greetingVC?.greeting = "Welcome, \(userNameTextField.text ?? "")"
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+    }
+    
     @IBAction func forgotUserNameButton() {
         showAlert(withTitle: "Oops!", andMessage: "Your name is \(userName) 😉" )
     }

@@ -22,6 +22,10 @@ final class GreetingViewController: UIViewController {
         greetingLabel.text = greeting
     }
     
+    override var shouldAutorotate: Bool {
+            return false
+        }
+    
     private func setBackgroundColor() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds

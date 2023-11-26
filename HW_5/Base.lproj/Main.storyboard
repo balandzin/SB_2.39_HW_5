@@ -37,8 +37,8 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="logInAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="i98-gr-kHJ"/>
-                                            <segue destination="S28-gs-LdD" kind="presentation" modalPresentationStyle="fullScreen" id="mIi-Hs-NuW"/>
+                                            <action selector="logInAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="fWB-8a-0KG"/>
+                                            <segue destination="S28-gs-LdD" kind="presentation" modalPresentationStyle="fullScreen" id="AiY-5L-467"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -119,7 +119,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="hHh-E6-Tff" kind="unwind" unwindAction="unwindFor:" id="BUb-sO-P68"/>
+                                    <segue destination="hHh-E6-Tff" kind="unwind" unwindAction="unwindFor:" id="5yb-ZV-h6o"/>
                                 </connections>
                             </button>
                         </subviews>
