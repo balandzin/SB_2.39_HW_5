@@ -45,6 +45,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Forgot User Name?">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleCaption1"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="forgotUserNameButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="f2f-aV-bNc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8d-zt-pQN">
                                 <rect key="frame" x="239" y="511.33333333333331" width="125" height="28.333333333333314"/>
@@ -52,6 +55,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password?">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleCaption1"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="forgotPasswordButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="wM8-SW-nMs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -67,6 +73,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WIt-Nr-tQD" secondAttribute="trailing" constant="40" id="wpe-4x-FuK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="24a-3V-9MV" id="veD-p3-VfH"/>
+                        <outlet property="userNameTextField" destination="D0G-Qw-ncl" id="tlR-hy-yU1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
