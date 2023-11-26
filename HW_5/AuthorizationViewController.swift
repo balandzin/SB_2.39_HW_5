@@ -42,7 +42,6 @@ final class AuthorizationViewController: UIViewController {
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        let greetingVC = segue.source as? GreetingViewController
         userNameTextField.text = ""
         passwordTextField.text = ""
     }
