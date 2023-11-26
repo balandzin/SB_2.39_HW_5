@@ -12,12 +12,8 @@ final class AuthorizationViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
             
-    let userName = "User"
-    let password = "Password"
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    private let userName = "User"
+    private let password = "Password"
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let greetingVC = segue.destination as? GreetingViewController
@@ -25,11 +21,11 @@ final class AuthorizationViewController: UIViewController {
     }
     
     @IBAction func forgotUserNameButton() {
-        showAlert(withTitle: "Oops!", andMessage: "Your name is User 😉" )
+        showAlert(withTitle: "Oops!", andMessage: "Your name is \(userName) 😉" )
     }
     
     @IBAction func forgotPasswordButton() {
-        showAlert(withTitle: "Oops!", andMessage: "Your password is Password 😉")
+        showAlert(withTitle: "Oops!", andMessage: "Your password is \(password) 😉")
     }
     
     @IBAction func logInAction() {
@@ -51,6 +47,7 @@ final class AuthorizationViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             self.passwordTextField.text = ""
+            self.userNameTextField.text = ""
         }
         alert.addAction(okAction)
         present(alert, animated: true)

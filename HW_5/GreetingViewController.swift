@@ -37,7 +37,4 @@ final class GreetingViewController: UIViewController {
         gradientLayer.shouldRasterize = true
         backgroundGradientView.layer.addSublayer(gradientLayer)
     }
-    
-    
-    
 }
