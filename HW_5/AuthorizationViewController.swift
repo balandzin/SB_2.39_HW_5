@@ -22,6 +22,7 @@ final class AuthorizationViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     @IBAction func forgotUserNameButton() {
@@ -42,18 +43,16 @@ final class AuthorizationViewController: UIViewController {
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        userNameTextField.text = ""
         passwordTextField.text = ""
+        userNameTextField.text = ""
     }
     
     private func showAlert(withTitle title: String, andMessage message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             self.passwordTextField.text = ""
-            self.userNameTextField.text = ""
         }
         alert.addAction(okAction)
         present(alert, animated: true)
     }
 }
-
