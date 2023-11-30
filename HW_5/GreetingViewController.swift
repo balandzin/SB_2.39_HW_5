@@ -14,31 +14,40 @@ final class GreetingViewController: UIViewController {
     
     var greeting: String!
     
+    private let primaryColor = UIColor(
+        red: 210/255,
+        green: 109/255,
+        blue: 128/255,
+        alpha: 1
+    )
+    private let secondaryColor = UIColor(
+        red: 107/255,
+        green: 148/255,
+        blue: 230/255,
+        alpha: 1
+    )
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setBackgroundColor()
+        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         
-        greetingLabel.text = greeting
+        greetingLabel.text = "Welcome, \(greeting ?? "")!"
     }
     
     override var shouldAutorotate: Bool {
             return false
         }
-    
-    private func setBackgroundColor() {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = view.bounds
-        gradientLayer.colors = [
-            UIColor(
-                red: 195/255,
-                green: 126/255,
-                blue: 145/255,
-                alpha: 1
-            ).cgColor,
-            UIColor(red: 105/255, green: 128/255, blue: 186/255, alpha: 1).cgColor
-        ]
-        gradientLayer.shouldRasterize = true
-        backgroundGradientView.layer.addSublayer(gradientLayer)
+}
+
+extension UIView {
+    func addVerticalGradientLayer(topColor: UIColor, bottomColor: UIColor) {
+        let gradient = CAGradientLayer()
+        gradient.frame = bounds
+        gradient.colors = [topColor.cgColor, bottomColor.cgColor]
+        gradient.locations = [0.0, 1.0]
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = CGPoint(x: 0, y: 1)
+        layer.insertSublayer(gradient, at: 0)
     }
 }

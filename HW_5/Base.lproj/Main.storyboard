@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,16 +28,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartInsertDeleteType="no" textContentType="password"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJ1-3v-vvK">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUA-da-YPQ">
                                         <rect key="frame" x="0.0" y="102" width="350" height="34.333333333333343"/>
-                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Log In">
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
+                                        <buttonConfiguration key="configuration" style="filled" title="Log In"/>
                                         <connections>
-                                            <action selector="logInAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="fWB-8a-0KG"/>
-                                            <segue destination="S28-gs-LdD" kind="presentation" modalPresentationStyle="fullScreen" id="AiY-5L-467"/>
+                                            <segue destination="S28-gs-LdD" kind="presentation" modalPresentationStyle="fullScreen" id="8wP-2i-lh9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -50,17 +45,17 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleCaption1"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="forgotUserNameButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="f2f-aV-bNc"/>
+                                    <action selector="forgotRegisterData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aqg-Hy-tNO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8d-zt-pQN">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8d-zt-pQN">
                                 <rect key="frame" x="276" y="412.33333333333331" width="125" height="28.333333333333314"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password?">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleCaption1"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="forgotPasswordButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="wM8-SW-nMs"/>
+                                    <action selector="forgotRegisterData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cyo-J9-oVz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -94,11 +89,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cJW-GG-3Gn">
-                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Bl-oS-WKm">
                                 <rect key="frame" x="16" y="220" width="398" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
@@ -124,7 +114,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GiF-qE-xtp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GiF-qE-xtp" firstAttribute="bottom" secondItem="pVe-HA-SkF" secondAttribute="bottom" constant="200" id="4DT-PK-S8P"/>
                             <constraint firstItem="GiF-qE-xtp" firstAttribute="trailing" secondItem="0Bl-oS-WKm" secondAttribute="trailing" constant="16" id="6p2-wz-8Vh"/>
@@ -136,7 +126,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backgroundGradientView" destination="cJW-GG-3Gn" id="ZwK-fQ-LKf"/>
                         <outlet property="greetingLabel" destination="0Bl-oS-WKm" id="3Uh-3b-uX5"/>
                     </connections>
                 </viewController>
@@ -146,12 +135,4 @@
             <point key="canvasLocation" x="941.8604651162791" y="-28.326180257510732"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

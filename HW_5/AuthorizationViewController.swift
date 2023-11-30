@@ -16,8 +16,8 @@ final class AuthorizationViewController: UIViewController {
     private let password = "Password"
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let greetingVC = segue.destination as? GreetingViewController
-        greetingVC?.greeting = "Welcome, \(userNameTextField.text ?? "")"
+        guard let greetingVC = segue.destination as? GreetingViewController else { return }
+        greetingVC.greeting = userName
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -25,21 +25,22 @@ final class AuthorizationViewController: UIViewController {
         view.endEditing(true)
     }
     
-    @IBAction func forgotUserNameButton() {
-        showAlert(withTitle: "Oops!", andMessage: "Your name is \(userName) 😉" )
-    }
-    
-    @IBAction func forgotPasswordButton() {
-        showAlert(withTitle: "Oops!", andMessage: "Your password is \(password) 😉")
-    }
-    
-    @IBAction func logInAction() {
-        if userNameTextField.text != userName || passwordTextField.text != password {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        guard userNameTextField.text == userName, passwordTextField.text == password else {
             showAlert(
-                withTitle: "Invalid login or password",
-                andMessage: "Please, enter correct login and password"
-            )
+                title: "Invalid login or password",
+                message: "Please, enter correct login and password") {
+                    self.passwordTextField.text = ""
+                }
+            return false
         }
+        return true
+    }
+    
+    @IBAction func forgotRegisterData(_ sender: UIButton) {
+        sender.tag == 0
+            ? showAlert(title: "Oops!", message: "Your name is \(userName) 😉")
+            : showAlert(title: "Oops!", message: "Your password is \(password) 😉")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
@@ -47,10 +48,10 @@ final class AuthorizationViewController: UIViewController {
         userNameTextField.text = ""
     }
     
-    private func showAlert(withTitle title: String, andMessage message: String) {
+    private func showAlert(title: String, message: String, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.passwordTextField.text = ""
+            completion?()
         }
         alert.addAction(okAction)
         present(alert, animated: true)
