@@ -14,6 +14,9 @@
 		D38A13982B1261E1003F357C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D38A13972B1261E1003F357C /* Assets.xcassets */; };
 		D38A139B2B1261E1003F357C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D38A13992B1261E1003F357C /* LaunchScreen.storyboard */; };
 		D38A13A72B1391FD003F357C /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A13A62B1391FD003F357C /* GreetingViewController.swift */; };
+		D38A13AD2B1B7F14003F357C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A13AC2B1B7F14003F357C /* User.swift */; };
+		D38A13AF2B1BA85B003F357C /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A13AE2B1BA85B003F357C /* InformationViewController.swift */; };
+		D38A13B32B1BBF93003F357C /* BioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A13B22B1BBF93003F357C /* BioViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		D38A139A2B1261E1003F357C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D38A139C2B1261E1003F357C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D38A13A62B1391FD003F357C /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
+		D38A13AC2B1B7F14003F357C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D38A13AE2B1BA85B003F357C /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		D38A13B22B1BBF93003F357C /* BioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,8 @@
 			children = (
 				D38A13922B1261E0003F357C /* AuthorizationViewController.swift */,
 				D38A13A62B1391FD003F357C /* GreetingViewController.swift */,
+				D38A13AE2B1BA85B003F357C /* InformationViewController.swift */,
+				D38A13B22B1BBF93003F357C /* BioViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -98,6 +106,7 @@
 		D38A13AB2B1B7D7C003F357C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D38A13AC2B1B7F14003F357C /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -173,10 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38A13B32B1BBF93003F357C /* BioViewController.swift in Sources */,
 				D38A13932B1261E0003F357C /* AuthorizationViewController.swift in Sources */,
 				D38A138F2B1261E0003F357C /* AppDelegate.swift in Sources */,
 				D38A13912B1261E0003F357C /* SceneDelegate.swift in Sources */,
+				D38A13AD2B1B7F14003F357C /* User.swift in Sources */,
 				D38A13A72B1391FD003F357C /* GreetingViewController.swift in Sources */,
+				D38A13AF2B1BA85B003F357C /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
