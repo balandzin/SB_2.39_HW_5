@@ -9,7 +9,6 @@ import UIKit
 
 final class GreetingViewController: UIViewController {
 
-
     @IBOutlet var greetingLabel: UILabel!
     @IBOutlet var fullNameLabel: UILabel!
     

@@ -7,8 +7,7 @@
 
 import UIKit
 
-class BioViewController: UITabBarController {
-    
+final class BioViewController: UITabBarController {
     
     @IBOutlet var largeLabel: UILabel!
     @IBOutlet var smallLabel: UILabel!
