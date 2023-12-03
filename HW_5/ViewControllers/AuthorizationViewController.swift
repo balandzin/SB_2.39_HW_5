@@ -1,9 +1,6 @@
-//
 //  ViewController.swift
 //  HW_5
-//
 //  Created by Антон Баландин on 25.11.23.
-//
 
 import UIKit
 
@@ -16,9 +13,9 @@ final class AuthorizationViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let tabBarVC = segue.destination as? UITabBarController
+        guard let tabBarVC = segue.destination as? UITabBarController else { return }
         
-        tabBarVC?.viewControllers?.forEach { viewController in
+        tabBarVC.viewControllers?.forEach { viewController in
             if let greetingVC = viewController as? GreetingViewController {
                 greetingVC.user = user
             } else if let navigationVC = viewController as? UINavigationController {
@@ -26,19 +23,6 @@ final class AuthorizationViewController: UIViewController {
                 informationVC?.user = user
             }
         }
-        
-        
-        
-//        tabBarVC?.viewControllers?.forEach { viewController in
-//            if let greetingVC = viewController as? GreetingViewController {
-//                greetingVC.user = user
-//            } else if let informationVC = viewController as? InformationViewController {
-//                informationVC.user = user
-//            } else if let navigationVC = viewController as? UINavigationController {
-//                let bioVC = navigationVC.topViewController as? BioViewController
-//                bioVC?.user = user
-//            }
-//        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

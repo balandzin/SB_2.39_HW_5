@@ -12,9 +12,6 @@ final class BioViewController: UITabBarController {
     @IBOutlet var largeLabel: UILabel!
     @IBOutlet var smallLabel: UILabel!
     
-//    var large: String!
-//    var small: String!
-    
     var user: User!
     
     private let primaryColor = UIColor(
@@ -23,6 +20,7 @@ final class BioViewController: UITabBarController {
         blue: 128/255,
         alpha: 1
     )
+    
     private let secondaryColor = UIColor(
         red: 107/255,
         green: 148/255,

@@ -45,4 +45,10 @@ final class InformationViewController: UIViewController {
         hobbiesLabel.text = user.person.hobbies
         workLabel.text = user.person.work
     }
-}
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let  bioVC = segue.destination as? BioViewController else { return }
+            bioVC.user = user
+        }
+    }
