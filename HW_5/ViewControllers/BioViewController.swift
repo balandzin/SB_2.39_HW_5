@@ -12,8 +12,10 @@ final class BioViewController: UITabBarController {
     @IBOutlet var largeLabel: UILabel!
     @IBOutlet var smallLabel: UILabel!
     
-    var large: String!
-    var small: String!
+//    var large: String!
+//    var small: String!
+    
+    var user: User!
     
     private let primaryColor = UIColor(
         red: 210/255,
@@ -33,8 +35,9 @@ final class BioViewController: UITabBarController {
         
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         
-//        largeLabel.text = large
-//        largeLabel.text = small
+        // Не могу понять, почему сюда не попадают данные
+        largeLabel.text = "\(user.person.name) \(user.person.surname)"
+        largeLabel.text = "\(user.person.name) \(user.person.surname) and some text"
     }
     
 

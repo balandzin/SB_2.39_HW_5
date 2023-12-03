@@ -15,23 +15,19 @@ final class AuthorizationViewController: UIViewController {
     private let user = User.getUser()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let barViewControllers = segue.destination as? UITabBarController else { return }
-        guard let greetingVC = barViewControllers.viewControllers![0] as? GreetingViewController else { return }
-        greetingVC.greeting = user.userName
-        greetingVC.fullName = "\(user.person.name) \(user.person.surname)"
         
-        guard let navigationVC = barViewControllers.viewControllers![1] as? UINavigationController else { return }
-        let informationVC = navigationVC.topViewController as! InformationViewController
-        informationVC.name = user.person.name
-        informationVC.surname = user.person.surname
-        informationVC.age = user.person.age
-        informationVC.country = user.person.country
-        informationVC.city = user.person.city
-        informationVC.hobbies = user.person.hobbies
-        informationVC.work = user.person.work
+        let tabBarVC = segue.destination as? UITabBarController
         
-//        bioVC.large = "\(user.person.name) \(user.person.surname) Bio"
-//        bioVC.small = "Some information"
+        tabBarVC?.viewControllers?.forEach { viewController in
+            if let greetingVC = viewController as? GreetingViewController {
+                greetingVC.user = user
+            } else if let informationVC = viewController as? InformationViewController {
+                informationVC.user = user
+            } else if let navigationVC = viewController as? UINavigationController {
+                let bioVC = navigationVC.topViewController as? BioViewController
+                bioVC?.user = user
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -12,8 +12,7 @@ final class GreetingViewController: UIViewController {
     @IBOutlet var greetingLabel: UILabel!
     @IBOutlet var fullNameLabel: UILabel!
     
-    var greeting: String!
-    var fullName: String!
+    var user: User!
     
     let primaryColor = UIColor(
         red: 210/255,
@@ -33,8 +32,8 @@ final class GreetingViewController: UIViewController {
         
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         
-        greetingLabel.text = "Welcome, \(greeting ?? "")!"
-        fullNameLabel.text = "My name is \(fullName ?? "")!"
+        greetingLabel.text = "Welcome, \(user.userName)!"
+        fullNameLabel.text = "My name is \(user.person.name) \(user.person.surname)!"
     }
     
     override var shouldAutorotate: Bool {

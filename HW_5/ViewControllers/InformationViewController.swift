@@ -17,13 +17,7 @@ final class InformationViewController: UIViewController {
     @IBOutlet var hobbiesLabel: UILabel!
     @IBOutlet var workLabel: UILabel!
     
-    var name: String!
-    var surname: String!
-    var age: String!
-    var country: String!
-    var city: String!
-    var hobbies: String!
-    var work: String!
+    var user: User!
     
     private let primaryColor = UIColor(
         red: 210/255,
@@ -43,13 +37,13 @@ final class InformationViewController: UIViewController {
         
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         
-        nameLabel.text = name
-        surnameLabel.text = surname
-        ageLabel.text = age
-        countryLabel.text = country
-        cityLabel.text = city
-        hobbiesLabel.text = hobbies
-        workLabel.text = work
+        // Не могу понять, почему сюда не попадают данные
+        nameLabel.text = user.person.name
+        surnameLabel.text = user.person.surname
+        ageLabel.text = user.person.age
+        countryLabel.text = user.person.country
+        cityLabel.text = user.person.city
+        hobbiesLabel.text = user.person.hobbies
+        workLabel.text = user.person.work
     }
-    
 }
