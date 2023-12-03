@@ -21,13 +21,24 @@ final class AuthorizationViewController: UIViewController {
         tabBarVC?.viewControllers?.forEach { viewController in
             if let greetingVC = viewController as? GreetingViewController {
                 greetingVC.user = user
-            } else if let informationVC = viewController as? InformationViewController {
-                informationVC.user = user
             } else if let navigationVC = viewController as? UINavigationController {
-                let bioVC = navigationVC.topViewController as? BioViewController
-                bioVC?.user = user
+            let informationVC = navigationVC.topViewController as? InformationViewController
+                informationVC?.user = user
             }
         }
+        
+        
+        
+//        tabBarVC?.viewControllers?.forEach { viewController in
+//            if let greetingVC = viewController as? GreetingViewController {
+//                greetingVC.user = user
+//            } else if let informationVC = viewController as? InformationViewController {
+//                informationVC.user = user
+//            } else if let navigationVC = viewController as? UINavigationController {
+//                let bioVC = navigationVC.topViewController as? BioViewController
+//                bioVC?.user = user
+//            }
+//        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

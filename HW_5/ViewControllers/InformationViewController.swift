@@ -16,7 +16,7 @@ final class InformationViewController: UIViewController {
     @IBOutlet var cityLabel: UILabel!
     @IBOutlet var hobbiesLabel: UILabel!
     @IBOutlet var workLabel: UILabel!
-    
+        
     var user: User!
     
     private let primaryColor = UIColor(
@@ -37,7 +37,6 @@ final class InformationViewController: UIViewController {
         
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         
-        // Не могу понять, почему сюда не попадают данные
         nameLabel.text = user.person.name
         surnameLabel.text = user.person.surname
         ageLabel.text = user.person.age
